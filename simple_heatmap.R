@@ -14,7 +14,7 @@ head(exp_matrix)
 mycols = colorRampPalette(c("blue","white","red"))(100) 
 
 ##set dendrogram clustering method
-hr <- hclust(as.dist(1-cor(t(y), method="pearson")), method="average") 
+hr <- hclust(as.dist(1-cor(t(exp_matrix), method="pearson")), method="average") 
 
 htmap <- heatmap.2(exp_matrix, Rowv= as.dendrogram(hr), dendrogram = "row", trace = "none",  
                col = mycols, keysize = 1, key.title = "Title", Colv = FALSE,
